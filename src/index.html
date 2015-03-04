@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app="C3PO">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C3PO</title>
+    <!-- DONT REMOVE - CSS is automatically added by running grunt -->
+    <!-- injector:css -->
+    <!-- endinjector -->
+  </head>
+  <body ng-controller="ApplicationController as appCtrl">
+
+    <div class="row">
+      <div class="small-6 columns" ng-controller="GithubController as githubCtrl">
+        <h2>Github Language Commits</h2>
+        <ul>
+          <li ng-repeat="language in githubCtrl.data.languages" ng-bind="language.language"></li>
+        </ul>
+      </div>
+
+      <div class="small-6 columns" ng-controller="DiabloController as diabloCtrl">
+        <h2>Diablo Heroes</h2>
+        <ul>
+          <li ng-repeat="hero in diabloCtrl.data.heroes" ng-bind="hero.name"></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- DONT REMOVE - JS is automatically added by running grunt -->
+    <!-- injector:js -->
+    <!-- endinjector -->
+  </body>
+</html>
