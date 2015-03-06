@@ -15,7 +15,7 @@ module.exports = (grunt) ->
 
       source:
         root: 'src'
-        js: 'src/coffee'
+        js: 'src/app'
         scss: 'src/scss'
         bower: 'bower_components'
 
@@ -25,7 +25,7 @@ module.exports = (grunt) ->
         css: 'build/assets/css'
         fonts: 'build/assets/fonts'
         images: 'build/assets/images'
-        js: 'build/assets/js'
+        js: 'build/app'
         vendor: 'build/vendor'
 
       dist:

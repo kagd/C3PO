@@ -21,7 +21,9 @@
       <div class="small-6 columns" ng-controller="DiabloController as diabloCtrl">
         <h2>Diablo Heroes</h2>
         <ul>
-          <li ng-repeat="hero in diabloCtrl.data.heroes" ng-bind="hero.name"></li>
+          <li ng-repeat="hero in diabloCtrl.data.heroes">
+            <div hero="hero"></div>
+          </li>
         </ul>
       </div>
     </div>
