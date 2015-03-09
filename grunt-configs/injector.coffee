@@ -17,15 +17,25 @@ module.exports = (grunt, options) ->
         # Include vendor files first
         # If we are using foundation, add these scripts to the html first
         "#{options.paths.build.vendor}/modernizr/*.js"
+
         # Don't include fastclick, jquery-placeholer, jquery.cookie
         "!#{options.paths.build.vendor}/{fastclick,jquery-placeholder,jquery.cookie}/**/*.js"
         "#{options.paths.build.vendor}/jquery/*.js"
         "#{options.paths.build.vendor}/angular/angular.min.js"
         "#{options.paths.build.vendor}/**/*.js"
+
         # Don't include angular mocks when not testing
         "!#{options.paths.build.vendor}/angular-mocks/*.js"
+
+        # Include app dependent modules
+        "#{options.paths.build.js}/modules/**/*.js"
+
         # Include angular app module
-        "#{options.paths.build.js}/c3_p_o.js"
+        "#{options.paths.build.js}/c3po.js"
+
+        # Include the helper files
+        "#{options.paths.build.js}/helpers/**/*.js"
+
         # Include the remaining app files
         "#{options.paths.build.js}/**/*.js"
       ]

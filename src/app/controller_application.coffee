@@ -6,7 +6,7 @@ ApplicationController = ($scope) ->
 
   init()
 
-@C3PO.controller 'ApplicationController', ApplicationController
+angular.module('C3PO').controller 'ApplicationController', ApplicationController
 ApplicationController.$inject = [
   '$scope'
 ]

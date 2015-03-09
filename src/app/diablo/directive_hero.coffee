@@ -14,5 +14,5 @@ Hero = ->
     templateUrl: '/app/diablo/directive_hero.html'
   }
 
-@C3PO.directive 'hero', Hero
+angular.module('C3PO').directive 'hero', Hero
 Hero.$inject = []

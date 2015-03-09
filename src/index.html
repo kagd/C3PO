@@ -9,24 +9,47 @@
     <!-- endinjector -->
   </head>
   <body ng-controller="ApplicationController as appCtrl">
+    <nav class="main">
+      <ul class="inline-list">
+        <li class="code">
+          <i class="fa fa-code"></i>
+          <span>code</span>
+        </li>
+        <li class="twitter">
+          <i class="fa fa-twitter"></i>
+        </li>
+      </ul>
+    </nav>
 
-    <div class="row">
-      <div class="small-6 columns" ng-controller="GithubController as githubCtrl">
-        <h2>Github Language Commits</h2>
-        <ul>
-          <li ng-repeat="language in githubCtrl.data.languages" ng-bind="language.language"></li>
-        </ul>
-      </div>
+    <section class="main">
+      <div class="row" ng-controller="GithubController as githubCtrl">
+        <div class="small-6 columns" >
+          <h2>Welcome to PrototypeOf</h2>
 
-      <div class="small-6 columns" ng-controller="DiabloController as diabloCtrl">
-        <h2>Diablo Heroes</h2>
-        <ul>
-          <li ng-repeat="hero in diabloCtrl.data.heroes">
-            <div hero="hero"></div>
-          </li>
-        </ul>
+          <p>
+            You visit and interact with sites all over the net. Most of which track your every move. I decided to condense my web presence into this site. Be sure to check out the other sections of prototypeOf to see just how much of a nerd I am :).
+          </p>
+          <p>What it took to make this site:</p>
+
+          <section class="commits">
+            <h3>
+              <span>Commits</span>
+            </h3>
+
+            {{githubCtrl.data}}
+          </section>
+        </div>
+
+        <div class="small-6 columns">
+          <h2>Diablo Heroes</h2>
+          <ul>
+            <li ng-repeat="hero in diabloCtrl.data.heroes">
+              <div hero="hero"></div>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </section>
 
     <!-- DONT REMOVE - JS is automatically added by running grunt -->
     <!-- injector:js -->

@@ -1,3 +1,3 @@
 'use strict'
 
-@C3PO = angular.module('C3PO', [])
+@C3PO = angular.module('C3PO', ['underscore'])

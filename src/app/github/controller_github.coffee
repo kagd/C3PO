@@ -1,11 +1,10 @@
 'use strict'
 
-GithubController = ($scope, $http) ->
-
+GithubController = ($scope, $http, JsonHelpers) ->
   $http.get('http://localhost:5000/api/github').success (data) =>
-    @data = data
+    @data = JsonHelpers.objectKeysToCamelCase data
 
-@C3PO.controller 'GithubController', GithubController
+angular.module('C3PO').controller 'GithubController', GithubController
 GithubController.$inject = [
-  '$scope', '$http'
+  '$scope', '$http', 'JsonHelpers'
 ]
