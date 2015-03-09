@@ -1,12 +1,17 @@
 'use strict'
 
-ApplicationController = ($scope) ->
-  init = ->
-    $scope.log = 'ApplicationController init called'
+ApplicationController = ($scope, NAV_ITEMS) ->
+  @navItems = NAV_ITEMS
+  @activeNavLink = @navItems.code
 
-  init()
+  @target = (navItem) ->
+    if navItem.external
+      return '_blank'
+    else
+      return '_self'
 
 angular.module('C3PO').controller 'ApplicationController', ApplicationController
 ApplicationController.$inject = [
-  '$scope'
+  '$scope',
+  'NAV_ITEMS'
 ]

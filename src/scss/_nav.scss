@@ -1,0 +1,39 @@
+nav.main {
+  margin-bottom: 2rem;
+  white-space: nowrap;
+  text-align: center;
+
+  .columns:first-of-type {
+    padding-left: 0;
+  }
+
+  .columns:last-of-type {
+    padding-right: 0;
+  }
+
+  i {
+    font-size: 1.75rem;
+    vertical-align: middle;
+  }
+
+  a {
+    border-bottom: 1px solid $color-link;
+    color: $color-link;
+    display: block;
+    line-height: 50px;
+
+    &.twitter {
+      border-bottom-color: $color-twitter;
+      color: $color-twitter;
+    }
+
+    &.active {
+
+      &.code {
+        border-bottom-color: $color-code;
+        color: $color-code;
+        text-shadow: 0 0 5px $color-code;
+      }
+    }
+  }
+}
