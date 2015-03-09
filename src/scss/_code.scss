@@ -28,3 +28,110 @@
     text-align: center;
   }
 }
+
+.commit-details {
+  background-color: $color-code;
+  margin-left: -0.9375rem;
+  margin-right: -0.9375rem;
+  padding: 3px 8px;
+
+  .commit-description {
+    color: $color-background;
+  }
+}
+
+.commit-history {
+  overflow: auto;
+  margin-left: -0.9375rem;
+  margin-right: -0.9375rem;
+  position: relative;
+  height: 130px;
+
+  * {
+    font-size: 1rem;
+  }
+
+  > ul {
+    left: -100px;
+    margin-bottom: 0;
+    margin-left: 0;
+    position: absolute;
+    transform: rotate(-90deg);
+    transform-origin: 100% 0;
+    top: 0;
+
+    ul {
+      margin-left: 0;
+    }
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    position: relative;
+    width: 110px;
+  }
+
+  h3 {
+    border-top: 1px solid $color-link;
+    height: 16px;
+
+    span {
+      background-color: $color-background;
+      color: $color-link;
+      display: block;
+      float: left;
+      margin-top: -12px;
+      padding-right: 5px;
+    }
+  }
+
+  h4 {
+    border-top: 1px solid $color-code;
+    height: 16px;
+
+    span {
+      background-color: $color-background;
+      display: block;
+      float: left;
+      margin-right: 10px;
+      margin-top: -14px;
+      padding-right: 5px;
+    }
+  }
+
+  dl {
+    height: 35px;
+    margin-left: 42px;
+    text-align: center;
+    transform: rotate(90deg);
+
+    dd {
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  h5 {
+    top: 0;
+    left: 0;
+    position: absolute;
+    transform: rotate(90deg);
+  }
+
+  dt {
+    display: none;
+  }
+
+  dd {
+    &:first-of-type {
+      color: $color-code;
+      padding-top: 55px;
+    }
+
+    &:nth-of-type(2) {
+      margin-top: -90px;
+    }
+  }
+}
