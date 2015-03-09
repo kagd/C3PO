@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>C3PO</title>
+    <script src="//use.typekit.net/ola6uac.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
     <!-- DONT REMOVE - CSS is automatically added by running grunt -->
     <!-- injector:css -->
     <!-- endinjector -->
@@ -21,7 +23,7 @@
     </nav>
 
     <section class="main">
-      <div class="row code" ng-controller="GithubController as githubCtrl">
+      <div class="row code" ng-controller="CodeController as codeCtrl">
         <div class="medium-6 columns" >
           <h1>Welcome to PrototypeOf</h1>
 
@@ -35,14 +37,44 @@
               <span>Commits</span>
             </h2>
 
-            <article>
-              {{githubCtrl.data.totalCommits}}
-            </article>
+            <article ng-bind="codeCtrl.data.totalCommits"></article>
           </section>
         </div>
 
-        <div class="small-6 columns">
+        <div class="medium-6 columns">
+          <div class="commit-details">
+            <span class="commit-date">{{codeCtrl.activeCommit.date.year}}/{{codeCtrl.activeCommit.date.month}} {{codeCtrl.activeCommit.date.day}}:</span>
+            <span class="commit-description" ng-bind="codeCtrl.activeCommit.message"></span>
+          </div>
 
+          <div class="commit-history">
+            <ul>
+              <li ng-repeat="(year, months) in codeCtrl.data.siteCommits">
+                <h3>
+                  <span ng-bind="year"></span>
+                </h3>
+
+                <div ng-repeat="(month, commits) in months">
+                  <h4>
+                    <span ng-bind="month"></span>
+                  </h4>
+
+                  <ul>
+                    <li ng-click="codeCtrl.activateCommit(commit)" ng-repeat="commit in commits">
+                      <dl>
+                        <dt>date</dt>
+                        <dd ng-bind="commit.date.day"></dd>
+                        <dt>additions</dt>
+                        <dd>+{{commit.additions}}</dd>
+                        <dt>deletions</dt>
+                        <dd>-{{commit.deletions}}</dd>
+                      </dl>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
