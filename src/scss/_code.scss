@@ -70,8 +70,23 @@
   }
 
   li {
+    cursor: pointer;
     position: relative;
     width: 110px;
+
+    .fa {
+      @include single-transition(all 250ms ease-out);
+      @include transition-delay(20ms);
+      @include transform( translateX(110px) );
+      background-color: $color-background;
+      color: $color-code;
+      position: absolute;
+      top: 10px;
+    }
+
+    .active .fa {
+      @include transform( translateX(103px) );
+    }
   }
 
   h3 {

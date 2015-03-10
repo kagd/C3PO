@@ -47,7 +47,7 @@
             <span class="commit-description" ng-bind="codeCtrl.activeCommit.message"></span>
           </div>
 
-          <div class="commit-history">
+          <div class="commit-history" id="commit-history">
             <ul>
               <li ng-repeat="(year, months) in codeCtrl.data.siteCommits">
                 <h3>
@@ -60,7 +60,8 @@
                   </h4>
 
                   <ul>
-                    <li ng-click="codeCtrl.activateCommit(commit)" ng-repeat="commit in commits">
+                    <li ng-click="codeCtrl.activateCommit($event, commit)" ng-class="{'active':codeCtrl.activeCommit == commit}" ng-repeat="commit in commits">
+                      <i class="fa fa-chevron-left"></i>
                       <dl>
                         <dt>date</dt>
                         <dd ng-bind="commit.date.day"></dd>
