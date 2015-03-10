@@ -1,7 +1,7 @@
 'use strict'
 
-CodeController = ($scope, $http, JsonHelpers, _, $document) ->
-  @scrollOffset = 0
+CodeController = ($scope, $http, JsonHelpers, _) ->
+  @firstHistoryItemOffset = 0
 
   @activateCommit = (e, commit) =>
     element = angular.element(e.target)
@@ -27,5 +27,5 @@ CodeController = ($scope, $http, JsonHelpers, _, $document) ->
 
 angular.module('C3PO').controller 'CodeController', CodeController
 CodeController.$inject = [
-  '$scope', '$http', 'JsonHelpers', '_', '$document'
+  '$scope', '$http', 'JsonHelpers', '_'
 ]
