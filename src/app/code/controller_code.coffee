@@ -7,13 +7,10 @@ CodeController = ($scope, $http, JsonHelpers, _) ->
     element = angular.element(e.target)
     offset = element.offset()
 
-    # @scrollOffset = -offset.left
-    # angular.element('#commit-history')[0].scrollLeft = offset.left
     $('#commit-history').scrollTo {left: offset.left, top: offset.top}, 500, {easing: Easie.quadInOut}
     console.log offset.left
-    # element.scrollTo offset.left, offset.top
+
     @activeCommit = commit
-    # scrollLeftAnimated
 
   onSuccess = (data) ->
     @data = JsonHelpers.objectKeysToCamelCase data
