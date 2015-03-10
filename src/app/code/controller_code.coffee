@@ -16,7 +16,8 @@ CodeController = ($scope, $http, JsonHelpers, _) ->
     @data = JsonHelpers.objectKeysToCamelCase data
 
     firstYear = @data.siteCommits[_.keys(@data.siteCommits)[0]]
-    firstCommit = firstYear[_.keys(firstYear)[0]][0]
+    firstMonth = _.keys(firstYear)[0]
+    firstCommit = firstYear[firstMonth][0]
 
     @activeCommit = firstCommit
 
